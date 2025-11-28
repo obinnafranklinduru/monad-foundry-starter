@@ -1,0 +1,36 @@
+name: Monad Foundry CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+env:
+  FOUNDRY_PROFILE: ci
+
+jobs:
+  check:
+    name: Foundry Project Check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: Install Foundry
+        uses: foundry-rs/foundry-toolchain@v1
+        with:
+          version: nightly
+
+      - name: Show Forge version
+        run: forge --version
+
+      - name: Check Formatting
+        run: forge fmt --check
+
+      - name: Build Contracts
+        run: forge build --sizes
+
+      - name: Run Tests
+        run: forge test -vvv
