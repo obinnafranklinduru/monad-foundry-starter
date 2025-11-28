@@ -33,8 +33,8 @@ Build with clarity. Follow these steps to set up your environment.
 Initialize your repository and install the dependencies. We use a dedicated make command to handle git submodules cleanly.
 
 ```bash
-git clone https://github.com/obinnafranklinduru/monad-foundry-kit.git
-cd monad-foundry-kit
+git clone https://github.com/obinnafranklinduru/monad-foundry-starter.git
+cd monad-foundry-starter
 make install
 ```
 
