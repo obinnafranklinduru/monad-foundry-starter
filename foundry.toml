@@ -38,3 +38,10 @@ remappings = [
     "openzeppelin-contracts/=lib/openzeppelin-contracts/",
     "forge-std/=lib/forge-std/src/"
 ]
+
+
+# Invariant Testing - Balanced for Local Development
+[invariant]
+runs = 128
+depth = 64
+fail_on_revert = false
