@@ -19,9 +19,9 @@ fs_permissions = [{ access = "read", path = "./" }]
 gas_reports = ["*"]
 
 # Metadata
-metadata = true
-metadata_hash = "none" 
-use_literal_content = true 
+use_literal_content = true
+bytecode_hash = "none"
+cbor_metadata = false
 
 [fmt]
 line_length = 120
@@ -45,3 +45,10 @@ remappings = [
 runs = 128
 depth = 64
 fail_on_revert = false
+
+[lint]
+exclude_lints = [
+    "mixed-case-variable",
+    "screaming-snake-case-immutable",
+    "unwrapped-modifier-logic"
+]
